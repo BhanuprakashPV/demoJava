@@ -10,14 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    - task: Maven@3
-      inputs:
+- task: Maven@3
+  inputs:
         mavenPomFile: 'pom.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
@@ -26,4 +20,3 @@ steps:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
-  displayName: 'Run a multi-line script'
